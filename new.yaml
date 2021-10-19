@@ -1,3 +1,0 @@
-activator:
-  - "model.add(Dense(num_classes, kernel_initializer='normal', activation='relu'))"
-  - "model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))"
