@@ -18,8 +18,16 @@ def train():
 
     # Load directory paths for persisting model
 
-    MODEL_DIR = os.environ["MODEL_DIR"]
-    MODEL_FILE_LDA = os.environ["MODEL_FILE_LDA"]
+    try:
+        MODEL_DIR = os.environ["MODEL_DIR"]
+    except:
+        MODEL_DIR = '/tmp'
+
+    try:
+        MODEL_FILE_LDA = os.environ["MODEL_FILE_LDA"]
+    except:
+        MODEL_FILE_LDA = 'model-file-lda'
+
     MODEL_PATH_LDA = os.path.join(MODEL_DIR, MODEL_FILE_LDA)
 
     # Load, read and normalize training data

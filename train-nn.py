@@ -17,8 +17,15 @@ def train():
 
     # Load directory paths for persisting model
 
-    MODEL_DIR = os.environ["MODEL_DIR"]
-    MODEL_FILE_NN = os.environ["MODEL_FILE_NN"]
+    try:
+        MODEL_DIR = os.environ["MODEL_DIR"]
+    except:
+        MODEL_DIR = '/tmp'
+    try:
+        MODEL_FILE_NN = os.environ["MODEL_FILE_NN"]
+    except:
+        MODEL_FILE_NN = 'model-file-nn.txt'
+
     MODEL_PATH_NN = os.path.join(MODEL_DIR, MODEL_FILE_NN)
 
     # Load, read and normalize training data
